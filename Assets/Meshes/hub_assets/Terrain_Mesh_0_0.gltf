@@ -1,0 +1,141 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.0.-1265191577)"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1048576,
+            "type": "VEC3",
+            "max": [
+                1024.0,
+                188.83920288085938,
+                1024.0
+            ],
+            "min": [
+                0.0,
+                36.93333435058594,
+                0.0
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1048576,
+            "type": "VEC3",
+            "max": [
+                0.7265861630439758,
+                1.0,
+                0.8326650857925415
+            ],
+            "min": [
+                -0.8563180565834045,
+                0.36356860399246218,
+                -0.891365647315979
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1048576,
+            "type": "VEC2",
+            "max": [
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 6279174,
+            "type": "SCALAR",
+            "max": [
+                65535.0
+            ],
+            "min": [
+                0.0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 58671128,
+            "uri": "Terrain_Mesh_0_0.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 12582912,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 12582912,
+            "byteLength": 12582912,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 25165824,
+            "byteLength": 8388608,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 33554432,
+            "byteLength": 25116696,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "Material",
+            "pbrMetallicRoughness": {
+                "metallicFactor": 0.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Terrain",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "Root",
+            "mesh": 0
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}

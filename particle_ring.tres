@@ -1,0 +1,65 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=11 format=3 uid="uid://cv223uitwasb1"]
+
+[sub_resource type="Gradient" id="Gradient_r4uhi"]
+offsets = PackedFloat32Array(0, 0.109804, 0.87451, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lmndm"]
+gradient = SubResource("Gradient_r4uhi")
+
+[sub_resource type="Curve" id="Curve_ggrd7"]
+max_value = 15.0
+_data = [Vector2(0.507538, 2.14286), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_smbvd"]
+curve = SubResource("Curve_ggrd7")
+
+[sub_resource type="Curve" id="Curve_pp80n"]
+
+[sub_resource type="Curve" id="Curve_nv68l"]
+min_value = -1.0
+_data = [Vector2(0, -0.593178), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_qpeq1"]
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_iqd4a"]
+curve_x = SubResource("Curve_pp80n")
+curve_y = SubResource("Curve_nv68l")
+curve_z = SubResource("Curve_qpeq1")
+
+[sub_resource type="Curve" id="Curve_8nt3b"]
+_data = [Vector2(0, 0), 0.0, 10.9361, 0, 0, Vector2(0.102473, 1), -2.25465, -2.25465, 0, 0, Vector2(1, 0), -1.55379, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gwtad"]
+curve = SubResource("Curve_8nt3b")
+
+[resource]
+emission_shape_offset = Vector3(0, 1.5, 0)
+emission_shape_scale = Vector3(2, 2, 2)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 3.5
+emission_ring_inner_radius = 3.0
+angle_min = -360.0
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+orbit_velocity_max = 1.0
+orbit_velocity_curve = SubResource("CurveXYZTexture_iqd4a")
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 1.0
+radial_accel_max = 5.0
+damping_min = 0.5
+damping_max = 5.0
+scale_min = 0.25
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_gwtad")
+color = Color(4.01176, 1.2549, 0.627451, 1)
+color_ramp = SubResource("GradientTexture1D_lmndm")
+emission_curve = SubResource("CurveTexture_smbvd")
+turbulence_noise_strength = 4.81
+turbulence_noise_scale = 0.79

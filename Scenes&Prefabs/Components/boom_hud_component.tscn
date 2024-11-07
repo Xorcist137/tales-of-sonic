@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://0f3iirwwlyxq"]
+
+[ext_resource type="Script" path="res://Scripts/HUD/BoomHUDComponent.gd" id="1_5ynhb"]
+[ext_resource type="Theme" uid="uid://bbg70nvlqifux" path="res://Scenes&Prefabs/Resources/progress_bar_theme.tres" id="2_sd3qh"]
+[ext_resource type="Script" path="res://Scenes&Prefabs/Components/HPBar.gd" id="3_1jiix"]
+[ext_resource type="Texture2D" uid="uid://bq0hd5yurd2nl" path="res://Assets/Debug-Textures/circular_HP_bar_fill.png" id="4_n0bw3"]
+[ext_resource type="Texture2D" uid="uid://b05d3hmqxbs3t" path="res://Assets/Debug-Textures/circular_HP_bar.png" id="4_ucfsq"]
+[ext_resource type="Texture2D" uid="uid://bjd26dypxgakr" path="res://Assets/Debug-Textures/circular_HP_bar_top.png" id="5_u266r"]
+
+[node name="BoomHUDComponent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ynhb")
+
+[node name="BoostBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -230.0
+offset_top = -57.0
+offset_right = 232.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="BoostBox"]
+layout_mode = 2
+text = "Boost"
+horizontal_alignment = 1
+
+[node name="BoostBar" type="ProgressBar" parent="BoostBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_sd3qh")
+max_value = 240.0
+value = 120.0
+rounded = true
+show_percentage = false
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_right = 254.0
+offset_bottom = 61.0
+grow_horizontal = 2
+
+[node name="Speedometer" type="ProgressBar" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_sd3qh")
+max_value = 200.0
+value = 55.0
+rounded = true
+show_percentage = false
+
+[node name="Speed-Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Speed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 36.0
+
+[node name="RingLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Rings: "
+
+[node name="RingCounter" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="HPBar" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+offset_right = -300.0
+scale = Vector2(0.185, 0.185)
+script = ExtResource("3_1jiix")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HPBar"]
+layout_mode = 2
+size_flags_vertical = 3
+value = 88.0
+fill_mode = 4
+texture_under = ExtResource("4_ucfsq")
+texture_over = ExtResource("5_u266r")
+texture_progress = ExtResource("4_n0bw3")
+
+[node name="Label" type="Label" parent="HPBar"]
+visible = false
+layout_mode = 2
+text = "100"

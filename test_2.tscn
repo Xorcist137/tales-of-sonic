@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsfq4s1788l4d"]
+
+[ext_resource type="Texture2D" uid="uid://b515wm6vfpn48" path="res://Assets/Debug-Textures/Cold Sunset Equirect.png" id="1_ftoss"]
+[ext_resource type="PackedScene" uid="uid://bgvu60lqu4l8r" path="res://Scenes&Prefabs/Entities/player.tscn" id="2_3p031"]
+[ext_resource type="PackedScene" uid="uid://bie62tdmtt5an" path="res://Scenes&Prefabs/Entities/mouse_3_rd_person_cam.tscn" id="3_njttl"]
+[ext_resource type="PackedScene" uid="uid://0f3iirwwlyxq" path="res://Scenes&Prefabs/Components/boom_hud_component.tscn" id="4_25rvm"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5b274"]
+panorama = ExtResource("1_ftoss")
+
+[sub_resource type="Sky" id="Sky_ybvag"]
+sky_material = SubResource("PanoramaSkyMaterial_5b274")
+
+[sub_resource type="Environment" id="Environment_h1awu"]
+background_mode = 2
+background_color = Color(0.822191, 0.545492, 0.78398, 1)
+background_energy_multiplier = 0.82
+sky = SubResource("Sky_ybvag")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, -8.59472e-11, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -0.0198485, 73.8186, -0.000295697)
+light_color = Color(0.810994, 1, 0.995986, 1)
+light_energy = 0.333
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h1awu")
+
+[node name="Player" parent="." instance=ExtResource("2_3p031")]
+transform = Transform3D(1, -1.03234e-11, -8.73115e-11, 1.50011e-09, 0.999997, 1.36424e-12, 8.73115e-11, 5.45697e-12, 1, -5.78387, 77.3314, 33.6967)
+lock_rotation = true
+
+[node name="Mouse3rdPersonCam" parent="." instance=ExtResource("3_njttl")]
+transform = Transform3D(1, -1.0321e-11, 0, 4.49196e-11, 1, 0, 0, 0, 1, -9.31323e-10, 12.3024, 24.0516)
+
+[node name="BoomHUDComponent" parent="." instance=ExtResource("4_25rvm")]

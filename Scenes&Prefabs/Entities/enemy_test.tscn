@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://q45s40r5m8p5"]
+
+[ext_resource type="Script" path="res://Scenes&Prefabs/Entities/enemy_test.gd" id="1_yrn5c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_otdp4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbhxa"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0.388235, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_f4xof"]
+
+[node name="EnemyTest" type="RigidBody3D"]
+transform = Transform3D(1, -1.03216e-11, 0, 4.52373e-10, 0.999999, 0, 0, 1.81899e-12, 1, 0, 0, 0)
+can_sleep = false
+script = ExtResource("1_yrn5c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.055, 0, 0, 0, 3.055, 0, 0, 0, 3.055, 0, 0, 0)
+shape = SubResource("SphereShape3D_otdp4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.01, 0, 0, 0, 3.01, 0, 0, 0, 3.01, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_qbhxa")
+mesh = SubResource("SphereMesh_f4xof")

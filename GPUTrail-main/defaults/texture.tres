@@ -1,0 +1,9 @@
+[gd_resource type="GradientTexture1D" load_steps=2 format=3 uid="uid://vihus3ubsmd"]
+
+[sub_resource type="Gradient" id="Gradient_iqwo2"]
+offsets = PackedFloat32Array(0, 0.544715, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.455285, 0.455285, 0.455285, 1, 0, 0, 0, 1)
+
+[resource]
+gradient = SubResource("Gradient_iqwo2")
+use_hdr = true
